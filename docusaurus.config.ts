@@ -88,6 +88,10 @@ const config: Config = {
           label: 'Documentação',
         },
         {
+          type: 'docsVersionDropdown',
+          position: 'right',
+        },
+        {
           href: 'https://github.com/devmasnaodev/cloud-engine-docs',
           label: 'GitHub',
           position: 'right',
