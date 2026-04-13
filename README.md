@@ -1,41 +1,47 @@
-# Website
+# Cloud Engine — Documentation
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+[English](./README.md) | [Português](./README.pt-BR.md)
 
-## Installation
+> ⚠️ **Early-stage project:** Cloud Engine is under active development and **not ready for production use**. Use only for testing, evaluation, and controlled environments.
+
+Documentation site for [Cloud Engine](https://github.com/devmasnaodev/cloud-engine), a platform for developers, agencies, and freelancers who need to manage WordPress engines on VPS servers (EasyEngine, WordOps, and similar) — without constant SSH access.
+
+Built with [Docusaurus](https://docusaurus.io/).
+
+## What is Cloud Engine?
+
+Cloud Engine acts as a **remote management layer** that communicates with the server where your engine is running. It centralizes server provisioning, engine operations, and site lifecycle management in a unified interface — while still allowing direct SSH access at any time.
+
+## Running the docs locally
+
+**Prerequisites:** Node.js and npm (or Yarn).
 
 ```bash
-yarn
-```
-
-## Local Development
-
-```bash
+npm start
+# or
 yarn start
 ```
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+Opens a browser with live reload at `http://localhost:3000`.
 
-## Build
+## Build and Serve
 
 ```bash
-yarn build
+npm run build && npm run serve
+# or
+yarn build && yarn serve
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+Generates static output in the `build/` directory and serves it locally for preview.
 
 ## Deployment
 
-Using SSH:
+Publishes the site directly to GitHub Pages from the command line.
 
 ```bash
+# With SSH
 USE_SSH=true yarn deploy
+
+# Without SSH
+GIT_USER=<your-github-username> yarn deploy
 ```
-
-Not using SSH:
-
-```bash
-GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
